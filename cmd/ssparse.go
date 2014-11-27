@@ -47,45 +47,6 @@ func main() {
 
 	ioutil.WriteFile("C:\\Users\\bill.zhuang\\Dropbox\\Backup\\config.json", []byte(buffer.String()), 0644)
 	fmt.Println("done")
-	/*for k, v := range f {
-		switch vv := v.(type) {
-		case string:
-			//fmt.Println(k, "is string", vv)
-		case int:
-			//fmt.Println(k, "is int", vv)
-		case []interface{}:
-			//fmt.Println(k, "is an array:")
-			for i, u := range vv {
-				fmt.Println(i, u)
-			}
-		default:
-			fmt.Println(k, "is of a type I don't know how to handle")
-		}
-	} */
-
-	//fmt.Println(f.Index)
-	//fmt.Println(f.Configs[0].Server)
-
-	/*
-		item1 := &Configitem{
-			Local_address: "eouoeu",
-			Local_port:    111,
-			Method:        "eoeoue",
-			Password:      "ouoeu",
-			Server:        "oeuoeu",
-			Server_port:   "qoeueo",
-			Timeout:       3333,
-		}
-
-		config1 := &GuiConfig{
-			Index:   1,
-			Configs: []*Configitem{item1}}
-
-		fmt.Println(config1.Configs[0].Local_address)
-
-		res2, err := json.Marshal(config1)
-		check(err)
-		fmt.Println(string(res2))*/
 }
 
 func check(e error) {
