@@ -14,7 +14,7 @@ type Configitem struct {
 	Password      string `json:"password"`
 	Server        string `json:"server"`
 	Server_port   int    `json:"server_port"`
-	Timeout       int    `json:"timeout"`
+	Timeout       int    `json:"timeout,omitempty"`
 }
 
 type GuiConfig struct {
