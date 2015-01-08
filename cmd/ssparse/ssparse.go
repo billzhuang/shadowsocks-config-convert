@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	sc "github.com/shadowsocks-configfile/shadowsocksconfigfile"
 	"io/ioutil"
 )
 
@@ -24,11 +25,11 @@ type GuiConfig struct {
 
 func main() {
 	data, err := ioutil.ReadFile("C:\\Users\\bill.zhuang\\Dropbox\\Backup\\gui-config.json")
-	check(err)
+	sc.Check(err)
 
 	var f = GuiConfig{}
 	err = json.Unmarshal(data, &f)
-	check(err)
+	sc.Check(err)
 
 	index := len(f.Configs)
 	var buffer bytes.Buffer
@@ -47,11 +48,4 @@ func main() {
 
 	ioutil.WriteFile("C:\\Users\\bill.zhuang\\Dropbox\\Backup\\config.json", []byte(buffer.String()), 0644)
 	fmt.Println("done")
-}
-
-func check(e error) {
-	if e != nil {
-		fmt.Println(e)
-		panic(e)
-	}
 }
